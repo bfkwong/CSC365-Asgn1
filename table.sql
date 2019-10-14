@@ -3,15 +3,15 @@ CREATE TABLE Player (
     team_id INTEGER NOT NULL,
     shirt_num INTEGER NOT NULL,
 
-    first STRING NOT NULL,
-    last STRING NOT NULL,
+    first VARCHAR(255) NOT NULL,
+    last VARCHAR(255) NOT NULL,
 
-    position STRING NOT NULL,
+    position VARCHAR(255) NOT NULL,
 
     height FLOAT NOT NULL,
     weight FLOAT NOT NULL,
 
-    birth_country STRING NOT NULL,
+    birth_country VARCHAR(255) NOT NULL,
     birthdate DATE NOT NULL,
 
     PRIMARY KEY (id),
@@ -24,8 +24,8 @@ CREATE TABLE Game (
     date DATE NOT NULL,
     home_team_id INTEGER NOT NULL,
     away_team_id INTEGER NOT NULL,
-    score_home STRING NOT NULL,
-    score_away STRING NOT NULL,
+    score_home VARCHAR(255) NOT NULL,
+    score_away VARCHAR(255) NOT NULL,
 
     PRIMARY KEY (id),
 
@@ -36,8 +36,8 @@ CREATE TABLE Game (
 CREATE TABLE Event (
     id INTEGER NOT NULL AUTO_INCREMENT,
     game_id INTEGER NOT NULL,
-    type STRING NOT NULL,
-    count STRING NOT NULL,
+    type VARCHAR(255) NOT NULL,
+    count VARCHAR(255) NOT NULL,
     player_id INTEGER NOT NULL,
 
     PRIMARY KEY (id),
@@ -48,9 +48,9 @@ CREATE TABLE Event (
 
 CREATE TABLE Team (
     id INTEGER NOT NULL AUTO_INCREMENT,
-    name STRING NOT NULL,
-    shortName STRING NOT NULL,
-    abbr STRING NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    shortName VARCHAR(255) NOT NULL,
+    abbr VARCHAR(255) NOT NULL,
 
     PRIMARY KEY (id)
 );
