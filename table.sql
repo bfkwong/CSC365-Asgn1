@@ -10,15 +10,15 @@ CREATE TABLE Team (
 CREATE TABLE Player (
     id INTEGER NOT NULL AUTO_INCREMENT,
     team_id INTEGER NOT NULL,
-    shirt_num INTEGER NOT NULL,
+    shirt_num INTEGER,
 
     first VARCHAR(255) NOT NULL,
     last VARCHAR(255) NOT NULL,
 
     position VARCHAR(255) NOT NULL,
 
-    height FLOAT NOT NULL,
-    weight FLOAT NOT NULL,
+    height FLOAT,
+    weight FLOAT,
 
     birth_country VARCHAR(255) NOT NULL,
     birthdate DATE NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE Player (
 );
 
 CREATE TABLE Game (
-    id INTEGER NOT NULL AUTO_INCREMENT,
+    id INTEGER NOT NULL,
     date DATE NOT NULL,
     home_team_id INTEGER NOT NULL,
     away_team_id INTEGER NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE Game (
 );
 
 CREATE TABLE Event (
-    id INTEGER NOT NULL AUTO_INCREMENT,
+    id INTEGER NOT NULL,
     game_id INTEGER NOT NULL,
     type VARCHAR(255) NOT NULL,
     count VARCHAR(255) NOT NULL,

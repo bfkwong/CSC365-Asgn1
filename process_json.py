@@ -10,9 +10,10 @@ def main():
     with open("games.sql", "w") as game:
         for x in game_json:
             txt = (
-                "INSERT INTO Game (date, home_team_id, away_team_id, score_home, score_away) "
-                + "VALUES ('{date}', {home_team_id}, {away_team_id}, '{score_home}', '{score_away}');"
+                "INSERT INTO Game (id, date, home_team_id, away_team_id, score_home, score_away) "
+                + "VALUES ({id}, '{date}', {home_team_id}, {away_team_id}, '{score_home}', '{score_away}');"
             ).format(
+                id=x["game_id"],
                 date=x["date"],
                 home_team_id=x["home_team_id"],
                 away_team_id=x["away_team_id"],
@@ -28,9 +29,10 @@ def main():
     with open("events.sql", "w") as game:
         for x in event_json:
             txt = (
-                "INSERT INTO Event (game_id, type, count, player_id) "
-                + "VALUES ({game_id}, '{type}', '{count}', {player_id});"
+                "INSERT INTO Event (id, game_id, type, count, player_id) "
+                + "VALUES ({id}, {game_id}, '{type}', '{count}', {player_id});"
             ).format(
+                id=x["id"],
                 game_id=x["game_id"],
                 type=x["type"],
                 count=x["count"],
