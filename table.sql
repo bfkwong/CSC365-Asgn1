@@ -1,3 +1,12 @@
+CREATE TABLE Team (
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    shortName VARCHAR(255) NOT NULL,
+    abbr VARCHAR(255) NOT NULL,
+
+    PRIMARY KEY (id)
+);
+
 CREATE TABLE Player (
     id INTEGER NOT NULL AUTO_INCREMENT,
     team_id INTEGER NOT NULL,
@@ -44,13 +53,4 @@ CREATE TABLE Event (
 
     FOREIGN KEY (game_id) REFERENCES Game(id),
     FOREIGN KEY (player_id) REFERENCES Player(id)
-);
-
-CREATE TABLE Team (
-    id INTEGER NOT NULL AUTO_INCREMENT,
-    name VARCHAR(255) NOT NULL,
-    shortName VARCHAR(255) NOT NULL,
-    abbr VARCHAR(255) NOT NULL,
-
-    PRIMARY KEY (id)
 );
