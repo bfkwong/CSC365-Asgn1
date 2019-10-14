@@ -29,10 +29,9 @@ def main():
     with open("events.sql", "w") as game:
         for x in event_json:
             txt = (
-                "INSERT INTO Event (id, game_id, type, count, player_id) "
-                + "VALUES ({id}, {game_id}, '{type}', '{count}', {player_id});"
+                "INSERT INTO Event (game_id, type, count, player_id) "
+                + "VALUES ({game_id}, '{type}', '{count}', {player_id});"
             ).format(
-                id=x["id"],
                 game_id=x["game_id"],
                 type=x["type"],
                 count=x["count"],
